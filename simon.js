@@ -69,6 +69,7 @@ function play2() {
       }, 500);
     } else {
       clearInterval(timer);
+      playerTurn()
     }
   }
   let timer = setInterval(switchNext, 1000);
@@ -88,6 +89,10 @@ function playerTurn() {
       if (game.toString() === clicksDone.toString()) {
         // por el momento "Hemos ganado, debemos pasar ala siguiente ronda"
         stopClicks();
+
+        setUpNextTurn()
+        play2()
+
       } else {
         // Error, partida perdida.
         stopClicks();
@@ -115,3 +120,6 @@ function playerTurn() {
     }
   }
 }
+
+setUpNextTurn()
+play2()
