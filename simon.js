@@ -1,31 +1,22 @@
 // globals
-let button1, button2, button3, button4
+let buttons = []
 
 
 /**
  * Generar estado inicial del juego
  */
 function initGame() {
+    let button // temporary variable for the newly created button
 
-    let main = document.querySelector("main")
+    const main = document.querySelector("main")
 
-    button1 = document.createElement("button")
-    button1.innerText = "1"
-    main.appendChild(button1)
-
-    button2 = document.createElement("button")
-    button2.innerText = "2"
-    main.appendChild(button2)
-
-    button3 = document.createElement("button")
-    button3.innerText = "3"
-    main.appendChild(button3)
-
-    button4 = document.createElement("button")
-    button4.innerText = "4"
-    main.appendChild(button4)
-
-    console.log(main)
+    for (let i of [1,2,3,4]) { 
+        button = document.createElement("button")
+        
+        button.innerText = buttons.length + 1
+        main.appendChild(button)
+        buttons.push(button)
+    }
 }
 
 
