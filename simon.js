@@ -6,6 +6,7 @@ let button1, button2, button3, button4
  * Generar estado inicial del juego
  */
 function initGame() {
+
     let main = document.querySelector("main")
 
     button1 = document.createElement("button")
@@ -23,6 +24,8 @@ function initGame() {
     button4 = document.createElement("button")
     button4.innerText = "4"
     main.appendChild(button4)
+
+    console.log(main)
 }
 
 
