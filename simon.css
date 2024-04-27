@@ -2,6 +2,10 @@ body {
   height: 100vh;
 }
 
+h1 {
+  text-align: center;
+}
+
 main {
   display: grid;
   gap: 1em;

@@ -123,3 +123,13 @@ function playerTurn() {
 
 setUpNextTurn()
 play2()
+
+//TODO
+// UX
+// explosion al game over
+// reset button
+// verificar que los colroes sean correctos
+// mejorar estilo
+// sonido
+// 3D
+// 
