@@ -32,6 +32,7 @@ function initGame() {
   }
   document.querySelector("#next-turn").addEventListener("click", setUpNextTurn);
   document.querySelector("#play").addEventListener("click", play2);
+  document.querySelector("#player-turn").addEventListener("click", playerTurn);
 }
 
 /**
@@ -74,3 +75,43 @@ function play2() {
 }
 
 initGame();
+
+function playerTurn() {
+  let clicksDone = [];
+  function buttonClicked(event) {
+    // Averiguamos que boton ha hecho click
+    let number = buttons.indexOf(event.target);
+    clicksDone.push(number + 1);
+
+    // comprobamos si clickDone corresponde con game
+    if (game.length === clicksDone.length) {
+      if (game.toString() === clicksDone.toString()) {
+        // por el momento "Hemos ganado, debemos pasar ala siguiente ronda"
+        stopClicks();
+      } else {
+        // Error, partida perdida.
+        stopClicks();
+        console.log("Game Over");
+      }
+    } else {
+      let inicial = game.slice(0, clicksDone.length);
+      if (inicial.toString() === clicksDone.toString()) {
+        // por el momento no hay errores, seguimos jugando.
+        console.log("OK");
+      } else {
+        // Error, partida perdida.
+        stopClicks();
+        console.log("Game Over");
+      }
+    }
+  }
+
+  for (let button of buttons) {
+    button.addEventListener("click", buttonClicked);
+  }
+  function stopClicks() {
+    for (let button of buttons) {
+      button.removeEventListener("click", buttonClicked);
+    }
+  }
+}
