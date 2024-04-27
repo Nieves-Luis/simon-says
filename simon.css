@@ -43,3 +43,5 @@ button.on,
 button:active {
   box-shadow: inset 0px 0px 100px 30px white;
 }
+
+/* Este cambio deberia de guardarse en mi RAMA no en la MAIN */
